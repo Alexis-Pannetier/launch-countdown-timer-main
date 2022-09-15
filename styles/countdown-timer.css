@@ -1,0 +1,158 @@
+.flip-card {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.top,
+.bottom,
+.flip-card .top-flip,
+.flip-card .bottom-flip {
+  text-align: center;
+  color: var(--primary);
+  font-size: 4.5rem;
+  box-sizing: border-box;
+  height: 0.5em;
+  width: 1.9em;
+  line-height: 0.9;
+  padding: 0.45em 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.top,
+.flip-card .top-flip {
+  background-color: var(--dark-desatured-blue);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+
+.top {
+  opacity: 0.8;
+}
+
+.bottom,
+.flip-card .bottom-flip {
+  background-color: var(--dark-desatured-blue);
+  align-items: flex-end;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.flip-card .top-flip {
+  position: absolute;
+  width: 100%;
+  animation: flip-top 250ms ease-in;
+  transform-origin: bottom;
+}
+
+.flip-card .bottom-flip {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  animation: flip-bottom 250ms ease-out 250ms;
+  transform-origin: top;
+  transform: rotateX(90deg);
+}
+
+.countdown {
+  margin: 0;
+  margin-top: 1rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  scale: 0.5;
+  transition: scale 0.5s ease-out;
+}
+
+.countdown-segment {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+  align-items: center;
+}
+
+.segment {
+  position: relative;
+  display: flex;
+  gap: 0.1em;
+  overflow: hidden;
+  box-shadow: 0 0.5em 0 var(--very-dark-blue);
+  border-radius: 0.5rem;
+}
+
+.segment::before,
+.segment::after {
+  content: "";
+  background-color: var(--very-dark-blue);
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  height: 0.7rem;
+  width: 0.7rem;
+  z-index: 1;
+}
+
+.segment::before {
+  transform: translate(-50%, -50%);
+  left: 0;
+}
+
+.segment::after {
+  transform: translate(50%, -50%);
+  right: 0;
+}
+
+.segment-title {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  color: var(--secondary);
+}
+
+@media (min-width: 384px) {
+  .countdown {
+    scale: 0.6;
+  }
+}
+
+@media (min-width: 512px) {
+  .segment-title {
+    margin: 1.5rem 0;
+  }
+
+  .countdown {
+    margin: 2rem 0;
+    scale: 0.8;
+  }
+}
+
+@media (min-width: 512px) {
+  .countdown {
+    margin: 4rem 0;
+    scale: 0.8;
+  }
+}
+
+@media (min-width: 700px) {
+  .countdown {
+    margin: 6rem 0;
+    scale: 1;
+  }
+}
+
+@keyframes flip-top {
+  100% {
+    transform: rotateX(90deg);
+  }
+}
+
+@keyframes flip-bottom {
+  100% {
+    transform: rotateX(0deg);
+  }
+}

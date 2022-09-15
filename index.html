@@ -4,7 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/countdown-timer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+
     <link
       rel="icon"
       type="image/png"
@@ -15,18 +21,81 @@
     <title>Frontend Mentor | Launch countdown timer</title>
   </head>
   <body>
-    <main>We're launching soon Days Hours Minutes Seconds</main>
+    <main>
+      <div class="container">
+        <h1>We're launching soon</h1>
+
+        <div class="countdown">
+          <div class="countdown-segment">
+            <div class="segment">
+              <div class="flip-card" data-days>
+                <div class="top">00</div>
+                <div class="bottom">00</div>
+              </div>
+            </div>
+            <div class="segment-title">Days</div>
+          </div>
+          <div class="countdown-segment">
+            <div class="segment">
+              <div class="flip-card" data-hours>
+                <div class="top">0</div>
+                <div class="bottom">0</div>
+              </div>
+            </div>
+            <div class="segment-title">Hours</div>
+          </div>
+          <div class="countdown-segment">
+            <div class="segment">
+              <div class="flip-card" data-minutes>
+                <div class="top">00</div>
+                <div class="bottom">00</div>
+              </div>
+            </div>
+            <div class="segment-title">Minutes</div>
+          </div>
+          <div class="countdown-segment">
+            <div class="segment">
+              <div class="flip-card" data-seconds>
+                <div class="top">00</div>
+                <div class="bottom">00</div>
+              </div>
+            </div>
+            <div class="segment-title">Seconds</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-bottom">
+        <div class="hill">
+          <div class="network">
+            <a href="#">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+            <a href="#">
+              <i class="fa fa-pinterest"></i>
+            </a>
+            <a href="#">
+              <i class="fa fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <footer>
       <div class="attribution">
-        Challenge by
-        <a
-          href="https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-"
-          target="_blank"
-          >Frontend Mentor</a
-        >. Coded by
-        <a href="https://github.com/Alexis-Pannetier">Alexis Pannetier</a>.
+        <span>
+          Challenge by
+          <a
+            href="https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-"
+            target="_blank"
+            >Frontend Mentor </a
+          >. Coded by
+          <a href="https://github.com/Alexis-Pannetier">Alexis Pannetier</a>.
+        </span>
       </div>
     </footer>
   </body>
 </html>
+
+<script src="index.js"></script>

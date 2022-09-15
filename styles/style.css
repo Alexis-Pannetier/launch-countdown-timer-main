@@ -1,0 +1,193 @@
+:root {
+  --primary: hsl(345, 95%, 68%);
+  --secondary: hsl(237, 18%, 59%);
+  --very-dark-blue: hsl(234, 17%, 12%);
+  --dark-blue: hsl(235, 16%, 14%);
+  --dark-desatured-blue: hsl(236, 21%, 26%);
+  --white: hsl(0, 0%, 100%);
+  --purple: #211a29;
+
+  --hill-height: 197px;
+  --hill-width: 1440px;
+}
+
+@font-face {
+  font-family: "RedHatText";
+  src: url("/fonts/RedHatText-Bold.ttf");
+  font-weight: 700;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    var(--dark-blue) 0%,
+    var(--purple) 50%,
+    var(--dark-desatured-blue) 250%
+  );
+  width: 100%;
+}
+
+main {
+  min-height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-image: url(/images/bg-stars.svg);
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  z-index: 10;
+  position: fixed;
+  bottom: 0;
+  float: none;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+* {
+  font-family: "RedHatText";
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--white);
+  letter-spacing: 6px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.container {
+  padding: 1rem;
+  padding-top: 3rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container-bottom {
+  position: relative;
+  overflow: hidden;
+}
+
+.hill {
+  top: 0;
+  margin: auto;
+  min-height: calc(var(--hill-height) / 2);
+  min-width: calc(var(--hill-width) / 2);
+  width: 100%;
+  background-position: bottom 0 right 20rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(/images/pattern-hills.svg);
+  margin-bottom: 4rem;
+  box-shadow: 0 4rem 0 #2f2439;
+}
+
+.network {
+  position: absolute;
+  bottom: 2.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.network a:hover .fa {
+  color: var(--primary);
+}
+
+.network .fa {
+  font-size: 1.75rem;
+  color: var(--secondary);
+  margin: 0 1rem;
+}
+
+@media (min-width: 384px) {
+  .hill {
+    min-height: calc(var(--hill-height) / 1.5);
+    min-width: calc(var(--hill-width) / 1.5);
+  }
+}
+
+@media (min-width: 512px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding-top: 6rem;
+  }
+
+  .network {
+    bottom: 2rem;
+  }
+
+  .network {
+    bottom: 4rem;
+  }
+
+  .hill {
+    margin-bottom: 0;
+    min-height: var(--hill-height);
+    min-width: var(--hill-width);
+    background-position: center;
+  }
+}
+
+@media (min-width: 1450px) {
+  .hill {
+    margin-bottom: -5rem;
+    min-height: calc(var(--hill-height) / 0.75);
+    min-width: calc(var(--hill-width) / 0.75);
+  }
+}
+
+@media (min-width: 1920px) {
+  .hill {
+    margin-bottom: -10rem;
+    min-height: calc(var(--hill-height) / 0.5);
+    min-width: calc(var(--hill-width) / 0.5);
+  }
+}
+
+@media (min-width: 3840px) {
+  .hill {
+    margin-bottom: -20rem;
+    min-height: calc(var(--hill-height) / 0.25);
+    min-width: calc(var(--hill-width) / 0.25);
+  }
+}
+
+/* ATTRIBUTION */
+.attribution {
+  font-family: roboto;
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--secondary);
+}
+
+.attribution a {
+  color: var(--secondary);
+}
+
+.attribution a:hover {
+  color: var(--primary);
+}
+
+/* MISC */
+::selection {
+  background-color: var(--secondary);
+  color: var(--white);
+}
