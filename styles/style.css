@@ -83,11 +83,10 @@ h1 {
 
 .hill {
   top: 0;
-  margin: auto;
-  min-height: calc(var(--hill-height) / 2);
-  min-width: calc(var(--hill-width) / 2);
-  width: 100%;
-  background-position: bottom 0 right 20rem;
+  display: absolute;
+  height: calc(var(--hill-height) / 2);
+  width: 100vw;
+  background-position: top 0 right -2rem;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(/images/pattern-hills.svg);
@@ -139,34 +138,9 @@ h1 {
   }
 
   .hill {
+    height: calc(var(--hill-height));
     margin-bottom: 0;
-    min-height: var(--hill-height);
-    min-width: var(--hill-width);
-    background-position: center;
-  }
-}
-
-@media (min-width: 1450px) {
-  .hill {
-    margin-bottom: -5rem;
-    min-height: calc(var(--hill-height) / 0.75);
-    min-width: calc(var(--hill-width) / 0.75);
-  }
-}
-
-@media (min-width: 1920px) {
-  .hill {
-    margin-bottom: -10rem;
-    min-height: calc(var(--hill-height) / 0.5);
-    min-width: calc(var(--hill-width) / 0.5);
-  }
-}
-
-@media (min-width: 3840px) {
-  .hill {
-    margin-bottom: -20rem;
-    min-height: calc(var(--hill-height) / 0.25);
-    min-width: calc(var(--hill-width) / 0.25);
+    background-position: top;
   }
 }
 
